@@ -1,12 +1,17 @@
-web:
+version: "2"
+
+services:
+  web:
+    build: ./docker-lib-wordpress/apache
     image: wordpress
     links:
      - mysql
     environment:
+     - WORDPRESS_DB_HOST=mysql
      - WORDPRESS_DB_PASSWORD=password
     ports:
      - "80:80"
-mysql:
+  mysql:
     image: mysql:5.7
     environment:
      - MYSQL_ROOT_PASSWORD=password
