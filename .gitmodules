@@ -1,0 +1,6 @@
+[submodule "WordPress"]
+	path = WordPress
+	url = https://github.com/masa67/wordpress-docker.git
+[submodule "docker-lib-wordpress"]
+	path = docker-lib-wordpress
+	url = https://github.com/masa67/docker-lib-wordpress
