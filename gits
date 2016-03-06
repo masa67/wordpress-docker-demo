@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e # -x
+
+CD=`pwd`
+for d in `git submodule foreach 'echo $path' | grep -v Enter`
+do
+	cd $d
+	pwd
+	(git "$@" || exit 0)
+	cd $CD
+done
+pwd
+git "$@"
